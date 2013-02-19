@@ -1,7 +1,0 @@
-useDynLib(bioanalyzeR, .registration=TRUE)
-
-exportPattern("^[^\\.]")
-
-importFrom(base64, decode);
-
-importFrom(XML, parseXML);

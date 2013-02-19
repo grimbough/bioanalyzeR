@@ -18,9 +18,14 @@ extractPreview <- function() {
     f1 <- file(tf2, open = "r", encoding = "UTF-16LE")
     buffer <- readLines(con = f1)
     close(f1)
+    buffer[1] <- substr(buffer[1], 3, nchar(buffer[1]))
     writeLines(text = buffer, con = "/tmp/preview.xml")
 
+    xml <- xmlToList(xmlParse("/tmp/preview.xml"))
 
+    writeLines(xml[['GelImage']][['text']], con = "/tmp/image.b64")
+    decode("/tmp/image.b64", "/tmp/image.png")
+    
 }
 
 extractCompressed <- function(file) {
