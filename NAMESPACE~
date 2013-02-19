@@ -4,4 +4,4 @@ exportPattern("^[^\\.]")
 
 importFrom(base64, decode);
 
-importFrom(XML, xmlParse);
+importFrom(XML, parseXML);
