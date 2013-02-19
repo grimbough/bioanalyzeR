@@ -1,0 +1,6 @@
+useDynLib(bioanalyzeR, .registration=TRUE)
+
+exportPattern("^[^\\.]")
+
+
+
